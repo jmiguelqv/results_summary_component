@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+:root {
+    /* ### Primary */
+    --LightRed: hsl(0, 100%, 67%);
+    --OrangeyYellow: hsl(39, 100%, 56%);
+    --GreenTeal: hsl(166, 100%, 37%);
+    --CobaltBlue: hsl(234, 85%, 45%);
+    /* ## Gradients */
+    --LightSlateBlueBackground: hsl(252, 100%, 67%);
+    --LightRoyalBlueBackground: hsl(241, 81%, 54%);
+    --VioletBlueCircle: hsla(256, 72%, 46%, 1);
+    --PersianBlueCircle: hsla(241, 72%, 46%, 0);
+    /* ### Neutral */
+    --White: hsl(0, 0%, 100%);
+    --PaleBlue: hsl(221, 100%, 96%);
+    --LightLavender: hsl(241, 100%, 89%);
+    --DarkGrayBlue: hsl(224, 30%, 27%);
+    /* ### Notes */
+    /* Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`. */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--LightLavender);
+    background-color: var(--PaleBlue);
+}
+main {
+    width: 375px;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--White);
+}
+.results {
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    background: linear-gradient(
+        to bottom,
+        var(--LightSlateBlueBackground),
+        var(--LightRoyalBlueBackground)
+    );
+}
+
+.results h1 {
+    font-size: 0.9em;
+    font-weight: 400;
+}
+.score {
+    height: 135px;
+    padding: 30px;
+    width: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-image: linear-gradient(
+        to top,
+        var(--PersianBlueCircle),
+        var(--VioletBlueCircle)
+    );
+}
+
+.points {
+    color: var(--White);
+    font-size: 3em;
+    font-weight: 800;
+}
+
+.range {
+    font-size: 0.6em;
+}
+
+.info h2 {
+    color: var(--White);
+}
+
+.info p {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.summary {
+    padding: 1em;
+}
+.summary h2 {
+    color: var(--DarkGrayBlue);
+    font-size: 1em;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin: 20px 0;
+}
+
+.stat p {
+    color: var(--DarkGrayBlue);
+}
+.stat span {
+    color: var(--LightLavender);
+}
+
+.stat[data-item-type='reaction'] {
+    background-color: hsla(0, 100%, 67%, 0.1);
+    color: var(--LightRed);
+}
+.stat[data-item-type='memory'] {
+    color: var(--OrangeyYellow);
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+.stat[data-item-type='verbal'] {
+    color: var(--GreenTeal);
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+.stat[data-item-type='visual'] {
+    color: var(--CobaltBlue);
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+button {
+    border: none;
+    display: block;
+    text-align: center;
+    width: 335px;
+    padding: 30px;
+    background-color: var(--DarkGrayBlue);
+    color: var(--PaleBlue);
+    border-radius: 35px;
+    font-weight: 800;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(
+        to bottom,
+        var(--LightSlateBlueBackground),
+        var(--LightRoyalBlueBackground)
+    );
+}
+
+/*footer*/
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 760px) {
+    main {
+        border-radius: 30px;
+        flex-direction: row;
+        width: 734px;
+        box-shadow: 0.5rem 1rem 3rem hsl(224, 30%, 27%, 0.2);
+    }
+    .results {
+        border-radius: 30px;
+        width: 367px;
+    }
+    .title h1 {
+        font-size: 1em;
+    }
+    .summary {
+        width: 367px;
+    }
+}
